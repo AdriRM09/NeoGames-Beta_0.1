@@ -69,5 +69,5 @@ function deseleccionar(selecciones) {
 }
 
 function back(){
-    location.href="Menu.html"
+    location.href="index.html"
 }
