@@ -245,5 +245,5 @@ btn.addEventListener("click", function () {
 });
 
 function back(){
-    location.href="Menu.html"
+    location.href="index.html"
 }
