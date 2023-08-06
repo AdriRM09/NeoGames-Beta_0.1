@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego del ahorcado</title>
+    <link rel="stylesheet" href="hangman.css">
+
+    <title>NEOGAMES</title>
+
+    <head>
+        <video onloadedmetadata="this.muted=true" autoplay loop class="miVideo">
+            <source src="Videos/smoke_.mp4" type="video/mp4">
+        </video>
+
+
+    <body>
+
+        <div class="ontainer">
+            <div class="bubbles">
+
+                <span style="--i:11;"></span>
+                <span style="--i:12;"></span>
+                <span style="--i:24;"></span>
+                <span style="--i:10;"></span>
+                <span style="--i:14;"></span>
+                <span style="--i:23;"></span>
+                <span style="--i:18;"></span>
+                <span style="--i:16;"></span>
+                <span style="--i:19;"></span>
+                <span style="--i:20;"></span>
+                <span style="--i:22;"></span>
+                <span style="--i:25;"></span>
+                <span style="--i:18;"></span>
+                <span style="--i:21;"></span>
+                <span style="--i:15;"></span>
+                <span style="--i:13;"></span>
+                <span style="--i:26;"></span>
+                <span style="--i:17;"></span>
+                <span style="--i:13;"></span>
+                <span style="--i:28;"></span>
+                <span style="--i:11;"></span>
+                <span style="--i:12;"></span>
+                <span style="--i:24;"></span>
+                <span style="--i:10;"></span>
+                <span style="--i:14;"></span>
+                <span style="--i:23;"></span>
+                <span style="--i:18;"></span>
+                <span style="--i:16;"></span>
+                <span style="--i:19;"></span>
+                <span style="--i:20;"></span>
+                <span style="--i:22;"></span>
+                <span style="--i:25;"></span>
+                <span style="--i:18;"></span>
+                <span style="--i:21;"></span>
+                <span style="--i:15;"></span>
+                <span style="--i:13;"></span>
+                <span style="--i:26;"></span>
+                <span style="--i:17;"></span>
+                <span style="--i:13;"></span>
+                <span style="--i:28;"></span>
+                <span style="--i:15;"></span>
+                <span style="--i:13;"></span>
+                <span style="--i:26;"></span>
+                <span style="--i:17;"></span>
+                <span style="--i:13;"></span>
+                <span style="--i:28;"></span>
+                <span style="--i:15;"></span>
+                <span style="--i:13;"></span>
+                <span style="--i:26;"></span>
+            </div>
+            <div class="letras">
+                <span style="--l: '¡N' ;">¡H</span>
+                <span style="--l: 'E' ;">A</span>
+                <span style="--l: 'O' ;">N</span>
+                <span style="--l: 'G' ;">G</span>
+                <span style="--l: 'A' ;">M</span>
+                <span style="--l: 'M' ;">A</span>
+                <span style="--l: 'E' ;">N!</span>
+            </div>
+
+            
+
+            <h1 id="title">Hangman Game</h1>
+            <div id="menu-container">
+                <button id="play-game-btn">Play</button>
+                <button id="rule-btn">Game Rules</button>
+                <button id="story-btn">Game Story</button>
+                <button id="description-btn">Game Description</button>
+                <div id="back">
+                    <button type="button" class="Container" onclick="back()">Regresar</button>
+                </div>
+            </div>
+
+            <div id="game-container" class="hidden">
+                <button id="return-to-menu-btn">Regresar al Menú</button>
+                <div id="inn">
+                    <input type="text" id="word-input" placeholder="Ingresa una palabra" maxlength="15" required>
+                    <input type="text" id="hint-input" maxlength="1" placeholder="Ingrese una pista (Opcional)">
+                </div>
+                <button id="start-btn">Comenzar Juego</button>
+                <div id="word-display" class="hidden"></div>
+                <div id="hangman"></div>
+                <div id="keyboard" class="hidden"></div>
+                <div id="message"></div>
+            </div>
+            <div id="story-container" class="hidden">
+                <p>
+                    Existe una leyenda al respecto al origen de este juego la cual cuenta
+                    que surgió a partir de la historia de un hombre que se ahorcó después
+                    de que su esposa le dijo que “Ya no lo amaba” por lo que este juego
+                    demuestra que al decir las palabras equivocadas podemos matar a alguien
+                    por lo que tenemos que tener mucho cuidado con lo que decimos.
+                </p>
+                <button id="return-from-story-btn">Regresar al Menú</button>
+            </div>
+
+            <div id="rule-container" class="hidden">
+                <ol>
+                    <li>Uno de los jugadores piensa en una palabra y la escribe en un papel o en algún medio digital.
+                        Esta palabra es la que el otro jugador deberá adivinar.</li>
+
+                    <li>El jugador que selecciona la palabra puede dar una pista opcionalmente, generalmente en forma de
+                        una letra que aparece en la palabra.</li>
+
+                    <li>El jugador que adivina comienza a mencionar letras del abecedario, una por una, para intentar
+                        descubrir la palabra. Cada vez que menciona una letra, el jugador que seleccionó la palabra debe
+                        decir si esa letra está presente en la palabra y, en caso afirmativo, en qué posiciones.</li>
+
+                    <li>Si la letra mencionada está presente en la palabra, el jugador que adivina debe completar todas
+                        las apariciones de esa letra en las diferentes posiciones. Si no está presente, el jugador que
+                        adivina acumula un intento fallido.</li>
+
+                    <li>El juego termina cuando el jugador que adivina adivina toda la palabra correctamente o cuando
+                        acumula un número específico de intentos fallidos (por ejemplo, 6 intentos, que es lo que se
+                        representa visualmente con el ahorcado).</li>
+
+                    <li>Si el jugador que adivina logra completar la palabra antes de alcanzar el número máximo de
+                        intentos fallidos, gana el juego. Si alcanza el número máximo de intentos fallidos sin haber
+                        adivinado la palabra, pierde el juego.</li>
+
+                </ol>
+                <button id="return-from-rule-btn">Regresar al Menú</button>
+            </div>
+
+            <div id="description-container" class="hidden">
+                <p>
+                    El juego del ahorcado es un juego de palabras que se juega tradicionalmente con papel y lápiz.
+                    Es un juego para dos o más jugadores, donde uno de ellos elige una palabra y el otro trata de
+                    adivinarla.
+                    El nombre del juego proviene del elemento gráfico utilizado para representar el número de intentos
+                    fallidos,
+                    que es un dibujo de un ahorcado. Con cada intento fallido, se va agregando una nueva parte del
+                    cuerpo del ahorcado hasta que está completamente dibujado, momento en el cual se ha perdido el
+                    juego.
+                </p>
+                <button id="return-from-description-btn">Regresar al Menú</button>
+            </div>
+
+            <div id="victory-container" class="hidden">
+                <h2>Congratulations!</h2>
+                <p>¡Has adivinado la palabra!</p>
+                <p id="victory-word"></p>
+                <button id="play-again-btn-victory">Regresar al menú</button>
+            </div>
+
+            <div id="defeat-container" class="hidden">
+                <h2>Game Over</h2>
+                <p>La palabra era:</p>
+                <p id="defeat-word"></p>
+                <button id="play-again-btn-defeat">Regresar al menú</button>
+            </div>
+
+            <audio autoplay loop>
+                <source src="music/Gerudo Valley_Lk8Y96kst_A.mp3" type="audio/mpeg">
+            </audio>
+
+            <script src="hangman.js"></script>
+    </body>
+
+</html>

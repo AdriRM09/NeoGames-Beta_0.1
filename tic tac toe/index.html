@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/tablet.css" media="screen and (min-width: 600px)">
+    <link rel="stylesheet" href="./styles/desktop.css" media="screen and (min-width: 870px)">
+
+    
+    <title>NEOGAMES</title>
+    <head>
+      <video onloadedmetadata="this.muted=true"autoplay loop class="miVideo">
+        <source src="Videos/smoke_.mp4" type="video/mp4">
+    </video>
+
+    <body>
+
+        <div class="ontainer">
+            <div class="bubbles">
+
+                <span style="--i:11;"></span>
+                <span style="--i:12;"></span>
+                <span style="--i:24;"></span>
+                <span style="--i:10;"></span>
+                <span style="--i:14;"></span>
+                <span style="--i:23;"></span>
+                <span style="--i:18;"></span>
+                <span style="--i:16;"></span>
+                <span style="--i:19;"></span>
+                <span style="--i:20;"></span>
+                <span style="--i:22;"></span>
+                <span style="--i:25;"></span>
+                <span style="--i:18;"></span>
+                <span style="--i:21;"></span>
+                <span style="--i:15;"></span>
+                <span style="--i:13;"></span>
+                <span style="--i:26;"></span>
+                <span style="--i:17;"></span>
+                <span style="--i:13;"></span>
+                <span style="--i:28;"></span>
+                <span style="--i:11;"></span>
+                <span style="--i:12;"></span>
+                <span style="--i:24;"></span>
+                <span style="--i:10;"></span>
+                <span style="--i:14;"></span>
+                <span style="--i:23;"></span>
+                <span style="--i:18;"></span>
+                <span style="--i:16;"></span>
+                <span style="--i:19;"></span>
+                <span style="--i:20;"></span>
+                <span style="--i:22;"></span>
+                <span style="--i:25;"></span>
+                <span style="--i:18;"></span>
+                <span style="--i:21;"></span>
+                <span style="--i:15;"></span>
+                <span style="--i:13;"></span>
+                <span style="--i:26;"></span>
+                <span style="--i:17;"></span>
+                <span style="--i:13;"></span>
+                <span style="--i:28;"></span>
+                <span style="--i:15;"></span>
+                <span style="--i:13;"></span>
+                <span style="--i:26;"></span>
+                <span style="--i:17;"></span>
+                <span style="--i:13;"></span>
+                <span style="--i:28;"></span>
+                <span style="--i:15;"></span>
+                <span style="--i:13;"></span>
+                <span style="--i:26;"></span>
+            </div>
+            <div class="letras">
+                <span style="--l: '¡T' ;">¡T</span>
+                <span style="--l: 'H' ;">H</span>
+                <span style="--l: 'R' ;">R</span>
+                <span style="--l: 'E' ;">E</span>
+                <span style="--l: 'E' ;">E</span>
+                <span style="--l: '_' ;">_</span>
+                <span style="--l: 'I' ;">I</span>
+                <span style="--l: 'N' ;">N</span>
+                <span style="--l: '_' ;">_</span>
+                <span style="--l: 'A' ;">A</span>
+                <span style="--l: '_' ;">_</span>
+                <span style="--l: 'R' ;">R</span>
+                <span style="--l: 'O' ;">O</span>
+                <span style="--l: 'W' ;">W!</span>
+            </div>
+
+<body>
+    <header class="header">
+        <figure class="header_fig">
+            <img class="header__fig-icon" src="./images/games.png" alt="Game Icon">
+        </figure>
+        <h1 class="header__h1">Juego del Gato</h1>
+    </header>
+    <section class="section">
+        <aside class="section__aside">
+            <h2 class="section__aside-h2" id="player1_title">Jugador 1</h2>
+            <picture class="section__aside-picture">
+                <img class="emoji" src="./images/init.png" alt="Inicial" id="img_player1">
+            </picture>
+            <div class="section__div">
+                <p class="section__div-p">Puntuación:</p>
+                <p class="section__div-number-score" id="score_1">0</p>
+            </div>
+        </aside>
+
+        <main class="section__main">
+            <table class="section__main-table">
+                <tr>
+                    <td id="c1_1">
+                        <button class="button_sel button_select" onclick="active_c_11()" type="button"
+                            id="button_active1"></button>
+                    </td>
+
+                    <td id="c1_2">
+                        <button class="button_sel button_select" onclick="active_c_12()" type="button"
+                            id="button_active2"></button>
+                    </td>
+
+                    <td id="c1_3">
+                        <button class="button_sel button_select" onclick="active_c_13()" type="button"
+                            id="button_active3"></button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td id="c2_1">
+                        <button class="button_sel button_select" onclick="active_c_21()" type="button"
+                            id="button_active4"></button>
+                    </td>
+
+                    <td id="c2_2">
+                        <button class="button_sel button_select" onclick="active_c_22()" type="button"
+                            id="button_active5"></button>
+                    </td>
+
+                    <td id="c2_3">
+                        <button class="button_sel button_select" onclick="active_c_23()" type="button"
+                            id="button_active6"></button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td id="c3_1">
+                        <button class="button_sel button_select" onclick="active_c_31()" type="button"
+                            id="button_active7"></button>
+                    </td>
+
+                    <td id="c3_2">
+                        <button class="button_sel button_select" onclick="active_c_32()" type="button"
+                            id="button_active8"></button>
+                    </td>
+
+                    <td id="c3_3">
+                        <button class="button_sel button_select" onclick="active_c_33()" type="button"
+                            id="button_active9"></button>
+                    </td>
+                </tr>
+
+            </table>
+        </main>
+
+        <div class="section__div-mobile">
+            <div class="player-mobile">
+                <p class="player-mobile-p">Jugador 1</p>
+                <p id="score_1m">0</p>
+            </div>
+
+            <div class="player-mobile">
+                <p class="player-mobile-p">Jugador 2</p>
+                <p id="score_2m">0</p>
+            </div>
+        </div>
+
+        <aside class="section__aside">
+            <h2 class="section__aside-h2" id="player2_title">Jugador 2</h2>
+            <picture class="section__aside-picture">
+                <img class="emoji" src="./images/init.png" alt="Inicial" id="img_player2">
+            </picture>
+            <div class="section__div">
+                <p class="section__div-p">Puntuación:</p>
+                <p class="section__div-number-score" id="score_2">0</p>
+            </div>
+        </aside>
+
+    </section>
+
+    <div class="modal-container">
+        <div class="modal modal-close">
+            <img src="./images/win.png" alt="Gana Inicio de partida">
+            <div class="modal-text">
+                <h1 id="playerInit"></h1>
+            </div>
+            <button class="button_start start_button" type="button" id="start">
+                Comenzar
+            </button>
+        </div>
+    </div>
+
+  
+
+    <footer class="footer">
+        <button type="button" class="button_start" id="ranGame">
+            Al AZAR
+        </button>
+        <button type="button" onclick="nextGame()" class="button_start" id="nextButton" disabled>
+            JUGAR DE NUEVO
+        </button>
+
+        <button type="button" onclick="resetButton()" class="button_start" id="cleanButton" disabled>
+            REINICIAR
+        </button>
+
+        <button type="button" onclick="history.go(-1)" class="button_start">
+            REGRESAR
+        </button>
+
+    </footer>
+
+    <audio autoplay loop>
+        <source src="music/Ocarina of Time - Gerudo Valley.mp3" type="audio/mpeg">
+        </audio>
+    
+
+</body>
+
+
+<script type="module" src="utils/index.js">
+
+</script>
+<script type="module" src="utils/ganador.js">
+
+</script>
+<script type="module" src="utils/iniciarJuego.js">
+
+</script>
+<script type="module" src="utils/ocultarModal.js">
+
+</script>
+<script type="module" src="utils/random.js">
+
+</script>
+<script type="module" src="utils/turno.js">
+
+</script>
+<script type="module" src="utils/validar.js">
+
+</script>
+<script type="module" src="regre.js">
+
+</script>
+
+
+
+
+
+
+</html>
