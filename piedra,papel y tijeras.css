@@ -10,7 +10,7 @@ body {
   flex-direction: column; 
   align-items: center;
   background: #0c192c;
-  min-height: 130vh; 
+  min-height: 100vh; 
   overflow: auto; 
 }
 .miVideo{
