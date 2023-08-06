@@ -32,8 +32,8 @@ html {
 
 .ontainer {
   position: relative;
-  width: 160%;
-  height: 160vh;
+  width: 100%;
+  height: 100vh;
   
 }
 
