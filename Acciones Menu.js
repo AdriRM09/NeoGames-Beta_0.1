@@ -6,7 +6,7 @@ function hangman(){
 }
 function three_in_a_row(){
    
-    location.href="tic tac toe/index.html"
+    location.href="tic tac toe/tres_en_raya.html"
 }
 function memorama(){
    
