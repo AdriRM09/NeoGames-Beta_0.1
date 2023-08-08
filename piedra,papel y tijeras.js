@@ -6,7 +6,7 @@ let roundsPlayed = 0;
 let secondPlayerSelection = null;
 
 function computerPlay() {
-    const options = ['piedra', 'papel', 'tijeras'];
+    const options = ['rock', 'paper', 'scissors'];
     const randomIndex = Math.floor(Math.random() * options.length);
     return options[randomIndex];
 }
@@ -23,9 +23,9 @@ function play(playerSelection) {
     if (playerSelection === computerSelection) {
         resultText.textContent = "¡Empate! Ambos eligieron " + playerSelection + ".";
     } else if (
-        (playerSelection === 'piedra' && computerSelection === 'tijeras') ||
-        (playerSelection === 'papel' && computerSelection === 'piedra') ||
-        (playerSelection === 'tijeras' && computerSelection === 'papel')
+        (playerSelection === 'rock' && computerSelection === 'scissors') ||
+        (playerSelection === 'paper' && computerSelection === 'rock') ||
+        (playerSelection === 'scissors' && computerSelection === 'paper')
     ) {
         playerScore++;
         resultText.textContent = "¡Ganaste! " + playerSelection + " vence a " + computerSelection + ".";
@@ -98,7 +98,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     updateScore();
 });
-
 function back(){
     location.href="index.html"
 }
