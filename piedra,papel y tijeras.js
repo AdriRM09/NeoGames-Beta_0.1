@@ -1,25 +1,31 @@
 let playerScore = 0;
 let computerScore = 0;
-let roundsToWin = 3; 
-let gameMode = 'pvc'; 
+let roundsToWin = 3; // Número de rondas por defecto
+let gameMode = 'pvc'; // Modo de juego por defecto
 let roundsPlayed = 0;
+let secondPlayerSelection = null;
 
 function computerPlay() {
-    const options = ['rock', 'paper', 'scissors'];
+    const options = ['piedra', 'papel', 'tijeras'];
     const randomIndex = Math.floor(Math.random() * options.length);
     return options[randomIndex];
 }
 
 function play(playerSelection) {
-    const computerSelection = gameMode === 'pvc' ? computerPlay() : prompt("Ingresa la opción de tu oponente (piedra, papel o tijeras):").toLowerCase();
+    const computerSelection = gameMode === 'pvc' ? computerPlay() : secondPlayerSelection;
     const resultText = document.getElementById('resultText');
+
+    if (gameMode === 'pvp' && secondPlayerSelection === null) {
+        resultText.textContent = "¡Esperando la selección del segundo jugador...";
+        return;
+    }
 
     if (playerSelection === computerSelection) {
         resultText.textContent = "¡Empate! Ambos eligieron " + playerSelection + ".";
     } else if (
-        (playerSelection === 'rock' && computerSelection === 'scissors') ||
-        (playerSelection === 'paper' && computerSelection === 'rock') ||
-        (playerSelection === 'scissors' && computerSelection === 'paper')
+        (playerSelection === 'piedra' && computerSelection === 'tijeras') ||
+        (playerSelection === 'papel' && computerSelection === 'piedra') ||
+        (playerSelection === 'tijeras' && computerSelection === 'papel')
     ) {
         playerScore++;
         resultText.textContent = "¡Ganaste! " + playerSelection + " vence a " + computerSelection + ".";
@@ -65,19 +71,29 @@ function showGameOver(message) {
 function startGame() {
     resetGame();
     roundsToWin = parseInt(document.getElementById('rounds').value);
-    gameMode = document.getElementById('gameMode').value;
+    gameMode = document.querySelector('input[name="gameMode"]:checked').value;
+    secondPlayerSelection = null; // Reiniciamos la selección del segundo jugador
     document.getElementById('options').style.display = "flex";
     document.getElementById('gameOver').style.display = "none";
+    const resultText = document.getElementById('resultText');
+    resultText.textContent = "¡Inicia el juego!";
 }
 
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('rounds').addEventListener('change', function() {
         roundsToWin = parseInt(this.value);
+        resetGame();
     });
 
-    document.getElementById('gameMode').addEventListener('change', function() {
-        gameMode = this.value;
-        resetGame();
+    document.getElementsByName('gameMode').forEach(function(radio) {
+        radio.addEventListener('change', function() {
+            gameMode = this.value;
+            resetGame();
+        });
+    });
+
+    document.getElementById('startButton').addEventListener('click', function() {
+        startGame();
     });
 
     updateScore();
