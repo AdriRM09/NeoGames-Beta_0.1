@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -82,57 +83,86 @@
             </div>
 
             <div id="container">
-                <h1>Piedra, Papel y Tijeras</h1>
+                <h1>Juego de Piedra, Papel o Tijeras</h1>
+                <h2>Rondas:</h2>
+                <input type="number" id="rounds" min="1" max="10" value="3">
+                <br><br>
+                
+
+       
+                <label>
+                    <input type="radio" id="gameM"name="gameMode" value="pvc" checked> <h3>Jugador vs. Computadora</h3>
+                </label>
+
+                <label>
+                    <input type="radio" id="gameM"name="gameMode" value="pvp"> <h4>Jugador vs. Jugador</h4>
+                </label>
+                <br><br>
 
 
-                <h3>Rondas</h3>
-                <div>
-                    <label for="rounds"></label>
-                    <input type="number" id="rounds" min="1" max="10" value="3">
-                </div>
 
-                <div>
-                    <h4>Modo de Juego</h4>
 
-                    <label for="gameMode"></label>
-                    <select id="gameMode">
-                        <option value="pvp">Jugador vs. Jugador</option>
-                        <option value="pvc">Jugador vs. Computadora</option>
-                    </select>
+                <button id="startButton">Iniciar Juego</button> <!-- Agregamos el botón "Iniciar Juego" -->
+                <br><br>
 
-                </div>
-                <button onclick="startGame()">Iniciar Juego</button>
+            
+  
                 <div class="options" id="options" style="display: none;">
-                    <button class="option" onclick="play('rock')">Piedra</button>
-                    <button class="option" onclick="play('paper')">Papel</button>
-                    <button class="option" onclick="play('scissors')">Tijeras</button>
+                    <button onclick="play('rock')">Piedra</button>
+                    <button onclick="play('paper')">Papel</button>
+                    <button onclick="play('scissors')">Tijeras</button>
                 </div>
-
-                <div id="result">
-                    <h2 id="resultText">Elige una opción para jugar</h2>
-                </div>
-
-
+                
+                <p id="resultText"><h4>¡Inicia el juego!</h4></p>
+                
                 <div>
                     <h5>Jugador: </h5>
                     <span id="playerScore">0</span>
                     <h6>Computadora:</h6>
                     <span id="computerScore">0</span>
                 </div>
+            
 
-                <h7 id="gameOver" style="display: none;"></h7>
-            </div>
+                </div>
+            
+                <p id="gameOver" style="display: none;"></p>
+            
+                <script src="piedra,papel y tijeras.js"></script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        document.getElementById('rounds').addEventListener('change', function() {
+                            roundsToWin = parseInt(this.value);
+                            resetGame();
+                        });
+            
+                        document.getElementsByName('gameMode').forEach(function(radio) {
+                            radio.addEventListener('change', function() {
+                                gameMode = this.value;
+                                resetGame();
+                            });
+                        });
+            
+                        document.getElementById('startButton').addEventListener('click', function() {
+                            startGame();
+                        });
+            
+                        updateScore();
+                    });
+                </script>
+            
 
             <div id="back">
                 <button type="button" class="Container" onclick="back()">Regresar</button>
             </div>
-
-
+            
+            
             <audio autoplay loop>
                 <source src="music/gerudo Valley Chil.mp3" type="audio/mpeg">
             </audio>
 
-            <script src="piedra,papel y tijeras.js"></script>
     </body>
-
+    <script src="piedra,papel y tijeras.js"></script>
 </html>
+
+
+
